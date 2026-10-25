@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Barbwire Guard — a second set of eyes alongside Windows Defender</title>
+<meta name="description" content="Barbwire Guard blocks trackers and ads system-wide, cleans junk without ever deleting your logins, watches your Downloads, and warns you early about ransomware — alongside Windows Defender, not instead of it. Lifetime pricing. No telemetry, no account, works offline.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!--
+  RELEASE FACTS — filled in at the v1.0 launch (Oct 25, 2026) from the
+  verified release run (GitHub Actions run 40240518749; gate green,
+  install/uninstall cycle 12/12 PASS):
+    File size : 2.55 MB (2,674,078 bytes)
+    SHA-256   : f64397cd68fbd8133f5f413970ee25449e7ad2af3a45488e19c47cdf75e3ad36
+    VirusTotal: no report exists (no API key; the public web upload
+                route was not workable) — the page says "Independent
+                scan: pending" and points at the fingerprint instead.
+                Never replace that with a hash-search link dressed up
+                as a report.
+    The installer file sits beside this page as
+    "BarbwireGuard-Setup-1.0.0.exe", which is what the download
+    buttons href to.
+-->
+
+<header class="site-header">
+  <img class="logo" src="barbwire-guard-logo-fire.webp" alt="Barbwire Guard logo — a shield and padlock ringed by a barbed-wire wreath of fire">
+  <div class="wordmark">
+    <span class="name-blue">Barbwire</span> <span class="name-gold">Guard</span>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <h1>A second set of eyes alongside Windows Defender.</h1>
+  <p class="lede">Barbwire Guard blocks trackers and ads across your whole PC,
+  cleans out junk <strong>without ever deleting your logins</strong>, watches your
+  Downloads, and warns you early when something starts messing with your files.
+  Plain language. No telemetry. No account. Works offline.</p>
+  <p class="cta-row">
+    <a class="button button-download" href="BarbwireGuard-Setup-1.0.0.exe">Download Barbwire Guard — Free</a>
+    <a class="button button-ghost" href="#tiers">See Pro &amp; Total</a>
+  </p>
+  <p class="fineprint">Free tier included in every download. Paid tiers are a
+  one-time <strong>lifetime</strong> license — no subscription, ever — and unlock
+  with a license file. All 1.x updates included.</p>
+</section>
+
+<section class="card release-details" aria-label="Release details">
+  <h2>Version 1.0.0 — release details</h2>
+  <dl>
+    <dt>File</dt><dd>BarbwireGuard-Setup-1.0.0.exe</dd>
+    <dt>Size</dt><dd>2.55 MB (2,674,078 bytes)</dd>
+    <dt>SHA-256</dt><dd class="mono">f64397cd68fbd8133f5f413970ee25449e7ad2af3a45488e19c47cdf75e3ad36</dd>
+    <dt>Multi-scanner report</dt><dd>Independent scan: pending — no multi-scanner report exists for this file yet. Verify the download by its SHA-256 fingerprint above before running it.</dd>
+    <dt>Requires</dt><dd>Windows 10 or 11 (64-bit), an administrator account for installation, and the free Microsoft .NET 8 Desktop Runtime. The agent starts when you sign in and runs under your own account — there is no system service.</dd>
+  </dl>
+  <p class="fineprint">Only download Barbwire Guard from this page at
+  <strong>barbwireguard.com</strong>. Check the SHA-256 above against your
+  download before installing; any other source is not us.</p>
+</section>
+
+<section class="card unsigned" aria-label="Unsigned launch disclosure">
+  <h2>⚠ Version 1.0 launches unsigned — read this first</h2>
+  <p>When you run the installer, Windows will show a blue
+  <strong>“Windows protected your PC”</strong> screen saying the publisher is
+  <strong>unknown</strong>. We are telling you here, before you download, so it
+  is not a surprise:</p>
+  <ul>
+    <li><strong>Why:</strong> code signing requires an identity-verification
+    enrollment, and ours — under publisher <strong>Joni Marie Flanary</strong> —
+    is still in progress. We chose to launch openly instead of quietly
+    waiting, and to put this disclosure on the front page.</li>
+    <li><strong>What the warning means:</strong> Microsoft has not verified
+    the publisher identity behind this file, so Windows warns you. That is
+    all it means.</li>
+    <li><strong>What it does not mean:</strong> it is not a malware finding.
+    Windows Defender and other scanners still scan the file normally, and
+    the multi-scanner report for this exact installer is linked in the
+    release details above.</li>
+    <li><strong>How to check your download:</strong> compare its SHA-256
+    with the value published above. If they match, the file is bit-for-bit
+    the one we released.</li>
+    <li><strong>How to proceed:</strong> on the Windows warning, choose
+    <em>More info</em> → <em>Run anyway</em>.</li>
+    <li><strong>The signed edition follows:</strong> a signed build under
+    Joni Marie Flanary is coming, and it is a <strong>free update</strong>
+    for everyone — all 1.x updates are included in every license,
+    including the free tier's.</li>
+  </ul>
+</section>
+
+<section class="features">
+  <h2>What it does</h2>
+  <ul class="feature-list">
+    <li><strong>Blocks trackers and ads system-wide.</strong> Known tracker
+    and ad domains are blocked using your hosts file — in every app, not
+    just the browser.</li>
+    <li><strong>Cleans junk — and never deletes your logins.</strong>
+    Temp and cache cleaning with <strong>Identity Keep</strong> standing
+    guard, so a clean never signs you out of your bank, email, or
+    streaming. A Windows restore point is created before every clean.</li>
+    <li><strong>Finds duplicates by content, not by name.</strong> Files
+    are matched by their actual contents (SHA-256), and you see
+    everything before anything is touched. Paid tiers can remove
+    duplicates — with undo and an audit log.</li>
+    <li><strong>Watches your Downloads.</strong> Files that trip plain,
+    published rules — double extensions like <span class="mono">invoice.pdf.exe</span>,
+    small unsigned executables, known-bad patterns — are encrypted into
+    quarantine, with one-click restore when a file turns out to be
+    innocent.</li>
+    <li><strong>Ransomware tripwire.</strong> Canary files and
+    sudden-change alarms (mass renames, extension surges, folder
+    collapse) that <em>warn you early</em>. It is a tripwire, honestly
+    named — see “What Barbwire Guard is not” below.</li>
+    <li><strong>Repair, in plain language.</strong> Runs Windows’ own
+    repair tools (SFC, DISM, CHKDSK) and explains what they found — no
+    proprietary repair magic, just Windows’ tools with a translator.
+    <span class="tier-tag">Pro</span></li>
+    <li><strong>Update Center.</strong> App updates you approve one by
+    one. Driver updates are matched to your hardware by hardware ID,
+    come only from the Windows Update catalog and official vendor
+    packages, are installed <strong>one at a time</strong> — restore
+    point first, device health check after each — and unsigned or
+    non-WHQL drivers are refused outright.
+    <span class="tier-tag">Apps: Pro · Drivers: Total</span></li>
+    <li><strong>No tracking cookies.</strong> Third-party and tracking
+    cookies are blocked and expired early — while Identity Keep
+    protects the cookies that keep you signed in. (Any tool promising
+    “no cookies at all” would sign you out of everything; we don’t
+    promise that.)</li>
+    <li><strong>Safe browsing.</strong> Malicious and phishing addresses
+    are blocked by the same feed engine that carries the ad, tracker,
+    and cookie rules — four feeds, one engine.
+    <span class="tier-tag">Feeds update automatically in Pro</span></li>
+    <li><strong>Breach check that keeps your address home.</strong>
+    Looks up your email against known breaches using Have I Been
+    Pwned’s k-anonymity API — your full address never leaves your
+    machine. <span class="tier-tag">Pro</span></li>
+    <li><strong>Secure shredder.</strong> For the files you want gone
+    for good. <span class="tier-tag">Pro</span></li>
+    <li><strong>Bring-your-own-server VPN wizard.</strong> Sets up
+    WireGuard on a server <em>you</em> control, kill switch included.
+    We never see your traffic, because it never touches us — there is
+    no Barbwire server. <span class="tier-tag">Total</span></li>
+  </ul>
+</section>
+
+<section class="card not-box" aria-label="What Barbwire Guard is not">
+  <h2>What Barbwire Guard is not</h2>
+  <ul>
+    <li><strong>Not an antivirus, and not a Defender replacement.</strong>
+    Its scanner is a plain-rules tripwire, not a detection engine. Keep
+    Windows Defender on — Barbwire Guard is the second set of eyes next
+    to it.</li>
+    <li><strong>Not a VPN service.</strong> No server fleet, no
+    subscriptions, no traffic through us — a setup wizard for your own
+    server.</li>
+    <li><strong>Not a private browser.</strong> The launcher opens your
+    installed Chrome or Edge in a hardened, separate profile. The
+    browser engine is Google’s or Microsoft’s.</li>
+    <li><strong>It does not “prevent” ransomware.</strong> It detects
+    the early signs and warns you. Any product that promises prevention
+    is selling you a story.</li>
+  </ul>
+</section>
+
+<section class="tiers" id="tiers">
+  <h2>Three tiers. Lifetime pricing. No rent.</h2>
+  <p class="fineprint">Every tier shows the <strong>same scan
+  findings</strong> — the free report and the paid report find the same
+  things. Upgrading buys more features, never scarier numbers.</p>
+  <div class="tier-grid">
+
+    <article class="tier-card">
+      <h3>Free</h3>
+      <p class="price">$0</p>
+      <ul>
+        <li>Tracker &amp; ad blocking (built-in list)</li>
+        <li>Cleaner basics with Identity Keep — logins never deleted</li>
+        <li>Duplicate finder report (by content hash)</li>
+        <li>Download Guard + encrypted quarantine</li>
+        <li>On-demand scan of any folder</li>
+        <li>Windows Defender status panel</li>
+        <li>Hardened browser launcher</li>
+      </ul>
+      <p><a class="button button-download" href="BarbwireGuard-Setup-1.0.0.exe">Download free</a></p>
+    </article>
+
+    <article class="tier-card tier-featured">
+      <h3>Pro — Lifetime</h3>
+      <p class="price">$49 <span class="price-note">launch price · then $69</span></p>
+      <ul>
+        <li>Everything in Free</li>
+        <li>Blocklist auto-updates — all four feeds (ads, trackers, cookie rules, malicious/phishing)</li>
+        <li>Deep + scheduled cleaning, restore point before every clean</li>
+        <li>Duplicate removal with undo and audit log</li>
+        <li>Restore Center + quarantine history</li>
+        <li>Full ransomware guard: canaries + extension-surge alarms</li>
+        <li>Extra watched folders beyond Downloads</li>
+        <li>Repair module (SFC / DISM / CHKDSK, plain-language report)</li>
+        <li>Update Center — app updates</li>
+        <li>Secure shredder · breach check</li>
+      </ul>
+      <p><a class="button button-buy" href="https://www.paypal.com/ncp/payment/79YK84SG5FJLY">Buy Pro — $49</a></p>
+      <p class="fineprint">Sold via PayPal — your license file is issued
+      by email after purchase (see “How buying works”).</p>
+    </article>
+
+    <article class="tier-card">
+      <h3>Total — Lifetime</h3>
+      <p class="price">$79 <span class="price-note">first 1,000 copies · then $99</span></p>
+      <ul>
+        <li>Everything in Pro</li>
+        <li>VPN wizard: your own WireGuard server, kill switch, DNS pinning</li>
+        <li>Update Center — driver updates with the one-at-a-time safety sequence</li>
+        <!-- DRAFT NUMBER: household coverage of 5 PCs is the launch-prep draft figure; the final count is Ray's call (scope Amendment 1 leaves it TBD). Confirm before this page goes live. -->
+        <li>Household coverage — install on up to 5 PCs in your home</li>
+        <li>First access to new modules</li>
+      </ul>
+      <p><a class="button button-buy" href="https://www.paypal.com/ncp/payment/RUG7M8AKKS9EN">Buy Total — $79</a></p>
+      <p class="fineprint">Sold via PayPal — your license file is issued
+      by email after purchase (see “How buying works”).</p>
+    </article>
+
+  </div>
+</section>
+
+<section class="card how-buying">
+  <h2>How buying works</h2>
+  <ol>
+    <li><strong>Download and install</strong> Barbwire Guard from this page.
+    It runs as the full Free tier right away.</li>
+    <li><strong>Buy Pro or Total</strong> via PayPal (one-time payment —
+    no subscription, no account with us).</li>
+    <li><strong>We email your license file</strong> (a small
+    <span class="mono">.lic</span> file), issued manually after purchase.</li>
+    <li><strong>Load it in the app</strong> — Dashboard → “Load license
+    file…” — and your tier unlocks immediately. The license works
+    offline and never phones home.</li>
+  </ol>
+  <p class="fineprint">No telemetry in any tier: Barbwire Guard does not
+  collect usage data, and there is no Barbwire server for it to phone
+  home to. Your encryption key never leaves your machine.</p>
+</section>
+
+</main>
+
+<footer>
+  <p>Barbwire Guard · barbwireguard.com · Publisher (signed edition, in
+  progress): Joni Marie Flanary</p>
+  <p class="fineprint">Barbwire Guard is a second set of eyes alongside
+  Windows Defender, not a replacement for antivirus software. Keep
+  Defender on.</p>
+</footer>
+
+</body>
+</html>

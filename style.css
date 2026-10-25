@@ -1,0 +1,105 @@
+/* Barbwire Guard — download site. Static, no build step.
+   Dark theme carrying the fire-ring logo: near-black background,
+   gold (#d9a441) and wordmark blue (#5b8def) accents. */
+
+:root {
+  --bg: #0c0e13;
+  --panel: #151924;
+  --panel-edge: #262d40;
+  --text: #e8eaf0;
+  --muted: #a7adc0;
+  --gold: #d9a441;
+  --blue: #5b8def;
+  --warn-bg: #241a08;
+  --warn-edge: #d9a441;
+  --mono: ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  line-height: 1.55;
+}
+
+main { max-width: 960px; margin: 0 auto; padding: 0 20px 48px; }
+
+.site-header {
+  display: flex; align-items: center; gap: 16px;
+  max-width: 960px; margin: 0 auto; padding: 24px 20px 8px;
+}
+.site-header .logo { width: 72px; height: 72px; border-radius: 14px; }
+.wordmark { font-size: 1.9rem; font-weight: 700; letter-spacing: .2px; }
+.name-blue { color: var(--blue); }
+.name-gold { color: var(--gold); }
+
+.hero { padding: 24px 0 8px; }
+.hero h1 { font-size: 2.1rem; line-height: 1.2; margin: 8px 0 12px; }
+.lede { font-size: 1.12rem; color: var(--text); max-width: 46rem; }
+.fineprint { color: var(--muted); font-size: .92rem; }
+.mono { font-family: var(--mono); font-size: .9em; word-break: break-all; }
+
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 20px 0 8px; }
+.button {
+  display: inline-block; padding: 12px 20px; border-radius: 8px;
+  font-weight: 600; text-decoration: none; border: 1px solid var(--panel-edge);
+}
+.button-download { background: var(--gold); color: #171106; border-color: var(--gold); }
+.button-download:hover { filter: brightness(1.08); }
+.button-ghost { color: var(--text); background: transparent; }
+.button-ghost:hover { border-color: var(--gold); }
+
+.card {
+  background: var(--panel); border: 1px solid var(--panel-edge);
+  border-radius: 12px; padding: 20px 24px; margin: 28px 0;
+}
+.card h2 { margin-top: 0; font-size: 1.3rem; }
+
+.release-details dl {
+  display: grid; grid-template-columns: 150px 1fr; gap: 6px 16px; margin: 0 0 10px;
+}
+.release-details dt { color: var(--muted); font-weight: 600; }
+.release-details dd { margin: 0; }
+
+.unsigned { background: var(--warn-bg); border: 1px solid var(--warn-edge); }
+.unsigned h2 { color: var(--gold); }
+.unsigned li { margin: 6px 0; }
+
+.features h2, .tiers h2 { font-size: 1.5rem; margin: 36px 0 12px; }
+.feature-list { list-style: none; padding: 0; margin: 0;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; }
+.feature-list li { background: var(--panel); border: 1px solid var(--panel-edge);
+  border-radius: 10px; padding: 12px 16px; }
+@media (max-width: 700px) { .feature-list { grid-template-columns: 1fr; } }
+
+.tier-tag {
+  display: inline-block; margin-left: 6px; padding: 0 8px; border-radius: 999px;
+  border: 1px solid var(--gold); color: var(--gold); font-size: .78rem; font-weight: 600;
+  vertical-align: middle; white-space: nowrap;
+}
+
+.not-box li { margin: 6px 0; }
+
+.tier-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+@media (max-width: 820px) { .tier-grid { grid-template-columns: 1fr; } }
+.tier-card {
+  background: var(--panel); border: 1px solid var(--panel-edge);
+  border-radius: 12px; padding: 18px 20px;
+}
+.tier-featured { border-color: var(--gold); }
+.tier-card h3 { margin: 0 0 4px; font-size: 1.15rem; }
+.price { font-size: 1.8rem; font-weight: 700; margin: 4px 0 10px; }
+.price-note { font-size: .85rem; color: var(--muted); font-weight: 400; }
+.tier-card ul { padding-left: 18px; margin: 0 0 12px; }
+.tier-card li { margin: 5px 0; }
+
+.how-buying ol { padding-left: 20px; }
+.how-buying li { margin: 8px 0; }
+
+footer {
+  max-width: 960px; margin: 0 auto; padding: 8px 20px 40px;
+  color: var(--muted); font-size: .92rem;
+}
